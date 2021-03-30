@@ -1,3 +1,3 @@
 # ChapelChannel
 
-A simple implementation of channels in Chapel using semaphores/
+A simple channel in Chapel using semaphores
