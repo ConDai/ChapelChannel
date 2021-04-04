@@ -41,19 +41,18 @@ record chan {
   }
 }
 
-
-proc >>= (const val:?t, ref ch:chan(t,?n)){
+operator >>= (const val:?t, ref ch:chan(t,?n)){
     ch.send(val);
 }
 
-proc <<= (ref ch:chan(?t,?n), const val:t){
+operator <<= (ref ch:chan(?t,?n), const val:t){
     ch.send(val);
 }
 
-proc >>= (ref ch:chan(?t,?n), ref ret:t){
+operator >>= (ref ch:chan(?t,?n), ref ret:t){
   ret = ch.read();
 }
 
-proc <<= (ref ret:?t, ref ch:chan(t,?n)){
+operator <<= (ref ret:?t, ref ch:chan(t,?n)){
   ret = ch.read();
 }
